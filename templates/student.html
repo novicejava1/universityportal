@@ -1,0 +1,38 @@
+<html> 
+    <head> 
+        <title>Student Info</title>
+        <link rel="stylesheet" href={{ url_for('static', filename='w3.css') }}>
+    </head> 
+    <body> 
+    <h1>University of Stack</h1> 
+    <div class="container"> 
+        <ul> 
+            <table>
+                <tr>
+                  <th>Entity</th>
+                  <th>Value</th>
+                </tr>
+                <tr>
+                  <td>Firstname</td>
+                  <td>{{ firstname }}</td>
+                </tr>
+                <tr>
+                  <td>Lastname</td>
+                  <td>{{ lastname }}</td>
+                </tr>
+                <tr>
+                  <td>Age</td>
+                  <td>{{ age }}</td>
+                </tr>
+                <tr>
+                  <td>Course</td>
+                  <td>{{ course }}</td>
+                </tr>
+              </table>
+        </ul> 
+    </div>
+    <div>
+        <p> Redirect to <a href={{ url_for('index') }}>Index Page</a></p>
+    </div>
+</body> 
+</html>

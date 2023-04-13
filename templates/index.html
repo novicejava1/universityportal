@@ -1,0 +1,41 @@
+<html> 
+    <head> 
+        <title>Student Info</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href={{ url_for('static', filename='w3.css') }}>
+    </head> 
+    <body> 
+    <h1>University of Stack</h1> 
+    <div> 
+        <ul> 
+            <li> 
+                <a href={{ url_for('signup') }}>Signup</a> 
+            </li> 
+            <li> 
+                <a href={{ url_for('login') }}>Login</a> 
+            </li>
+            <li> 
+                <a href=#about>About</a>     
+            </li>  
+        </ul> 
+    </div>
+    <div class="unicontainer" id="courses">
+        <h2>Courses</h2>
+        <h3>Electronics, Electrical, Mechanical and Pharmaceutical</h3>
+    </div>
+    <div class="unicontainer" id="library">
+        <h2>Library</h2>
+        <h3>Books, Video Courses, Case Studies and Project Documents</h3>
+
+    </div>
+    <div class="unicontainer" id="accolades">
+        <h2>Accolades</h2>
+        <h3>Produced Nobel Prize Laurets, Military Friendly School </h3>
+    </div>
+    <div class="unicontainer" id="about">
+        <h2>This is University of Stack</h2>
+        <h3>A place where teaching is not a profession, but its a passion with great determination and dedication to help mankind</h3>
+
+    </div>    
+    </body> 
+</html>
