@@ -6,20 +6,37 @@ from flask import request
 app = Flask(__name__)
 users = {}
 
+
+
 @app.route("/")
 def index():
+    """
+    This is the landing page for the University of Stack Portal
+    """
     return render_template('index.html', name=index)
+
 
 @app.route("/signup")
 def signup():
+    """
+    This is the signup page for the University of Stack Portal. Here students can register and create a student account
+    """    
     return render_template('signup.html', name=signup)
+
 
 @app.route("/login")
 def login():
+    """
+    This is the login page for the University of Stack Portal. Here students can login once they have successfully register their account
+    """
     return render_template('login.html', name=login)
+
 
 @app.route("/validate", methods=["POST"])
 def validate():
+    """
+    This is the backend service which registers a new student and creates an account for them.
+    """
     if request.method == 'POST':
         uname = request.form['uname']
         newpass = request.form['newpass']
@@ -37,8 +54,12 @@ def validate():
             else:
                 return "Login Unsuccessfull"    
 
+
 @app.route("/student/setdata", methods=["POST"])
 def setdata():
+    """
+    This is the backend service which captures the new student's data.
+    """
     if request.method == 'POST':
         firstname = request.form['firstname']
         lastname = request.form['lastname']
@@ -53,12 +74,20 @@ def setdata():
         #return "%s, %s, %s, %s" % (firstname, lastname, str(age), course)
         return render_template('student.html', firstname=firstname, lastname=lastname, age=age, course=course)
 
+
 @app.route("/student/getdata")
 def getdata():
+    """
+    This is the backend service which can be used to retrieve the student's data.
+    """
     return "Get Student Data"
+
 
 @app.route("/saveuser", methods=["POST"])
 def saveuser():
+    """
+    This is the backend service which stores the new student's data in a dictionary database.
+    """
     if request.method == 'POST':
         user = request.form['uname']
         newpass = request.form['newpass']
