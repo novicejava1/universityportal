@@ -1,4 +1,4 @@
-piccolo-theme
+furo
 Flask
 jinja2
 
